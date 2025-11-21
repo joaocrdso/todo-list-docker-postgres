@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    container_name: 'todo_postgres'
+    environment:
+      - 'POSTGRES_DB=tododb'
+      - 'POSTGRES_PASSWORD=todo'
+      - 'POSTGRES_USER=todo'
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
